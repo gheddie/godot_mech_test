@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="MechTest"
+run/main_scene="uid://dgq1wxnqgn8n6"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
