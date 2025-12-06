@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://cotm7wevgjyce"]
+
+[ext_resource type="PackedScene" uid="uid://gux5htfs85pj" path="res://Robot.tscn" id="1_y8ncq"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_y8ncq"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_gaqdb"]
+sky_material = SubResource("ProceduralSkyMaterial_y8ncq")
+
+[sub_resource type="Environment" id="Environment_jgjqi"]
+background_mode = 2
+sky = SubResource("Sky_gaqdb")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="Sandbox" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_jgjqi")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Robot" parent="." instance=ExtResource("1_y8ncq")]

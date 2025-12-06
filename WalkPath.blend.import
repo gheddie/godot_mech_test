@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://d3ji6tsdajeo"
-path="res://.godot/imported/RobotHead.blend-9b2234b89446c8506ca2509292977ad3.scn"
+uid="uid://sy0whxc0wxdw"
+path="res://.godot/imported/WalkPath.blend-3a70d6e3371a7f661d108bfb2c79df37.scn"
 
 [deps]
 
-source_file="res://RobotHead.blend"
-dest_files=["res://.godot/imported/RobotHead.blend-9b2234b89446c8506ca2509292977ad3.scn"]
+source_file="res://WalkPath.blend"
+dest_files=["res://.godot/imported/WalkPath.blend-3a70d6e3371a7f661d108bfb2c79df37.scn"]
 
 [params]
 
