@@ -1,7 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://mkcex8ki3y3r"]
+[gd_scene load_steps=3 format=3 uid="uid://mkcex8ki3y3r"]
 
 [ext_resource type="PackedScene" uid="uid://bfrc1h6pdmetu" path="res://WalkPath.glb" id="1_6o7uw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6o7uw"]
+size = Vector3(3.5, 0.4, 2.3)
 
 [node name="WalkPath" type="StaticBody3D"]
 
 [node name="WalkPath" parent="." instance=ExtResource("1_6o7uw")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(5.68495, 0, 0, 0, 1, 0, 0, 0, 3.6000001, 0, -1.4901161e-08, 4.3213367e-07)
+shape = SubResource("BoxShape3D_6o7uw")
