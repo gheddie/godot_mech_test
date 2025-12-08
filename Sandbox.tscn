@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cotm7wevgjyce"]
+[gd_scene load_steps=8 format=3 uid="uid://cotm7wevgjyce"]
 
 [ext_resource type="PackedScene" uid="uid://mkcex8ki3y3r" path="res://WalkPath.tscn" id="1_y8ncq"]
 [ext_resource type="PackedScene" uid="uid://gux5htfs85pj" path="res://Robot.tscn" id="2_gaqdb"]
@@ -16,6 +16,11 @@ sky = SubResource("Sky_jgjqi")
 tonemap_mode = 2
 glow_enabled = true
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gaqdb"]
+albedo_color = Color(0, 0, 1, 1)
+
+[sub_resource type="TorusMesh" id="TorusMesh_gaqdb"]
+
 [node name="Sandbox" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -29,4 +34,9 @@ shadow_enabled = true
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
 
 [node name="Robot" parent="." instance=ExtResource("2_gaqdb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -77, 2.516001, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -75, 2.516001, 0)
+
+[node name="TurnCircle" type="MeshInstance3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -75, 0.20710182, 0)
+material_override = SubResource("StandardMaterial3D_gaqdb")
+mesh = SubResource("TorusMesh_gaqdb")

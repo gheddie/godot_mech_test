@@ -3,7 +3,7 @@ extends CharacterBody3D
 
 const SPEED = 10.0
 const JUMP_VELOCITY = 4.5
-const TURN_SPEED = 0.5
+const TURN_SPEED = 0.35
 
 @onready var animationTree: AnimationTree = $AnimationTree
 
@@ -23,13 +23,15 @@ func _physics_process(delta: float) -> void:
 	handleTurn(delta)
 	move_and_slide()
 
-func handleTurn(_delta: float) -> void:
-	if Input.is_action_pressed("turnLeft"):
-		rotation.y += TURN_SPEED * _delta
+func handleTurn(_delta: float) -> void:	
+	if Input.is_action_pressed("turnLeft") or Input.is_action_pressed("turnRight"):
 		tipple()
-	elif  Input.is_action_pressed("turnRight"):
-		rotation.y -= TURN_SPEED * _delta
-		tipple()
+	var input_dir := Input.get_vector("turnLeft", "turnRight", "null", "null")
+	var rotationAmount = input_dir.x * _delta * -1 * TURN_SPEED
+	if Input.is_action_pressed("turnLeft"):		
+		rotate_y(rotationAmount)
+	if Input.is_action_pressed("turnRight"):
+		rotate_y(rotationAmount)
 
 func tipple() -> void:
 	animationTree["parameters/conditions/tipple"] = true
