@@ -3,7 +3,7 @@ extends CharacterBody3D
 
 const SPEED = 10.0
 const JUMP_VELOCITY = 4.5
-const TURN_SPEED = 0.35
+const TURN_SPEED = 0.75
 
 @onready var animationTree: AnimationTree = $AnimationTree
 
