@@ -1,7 +1,7 @@
 class_name Robot
 extends CharacterBody3D
 
-const SPEED = 10.0
+const SPEED = 25.0
 const JUMP_VELOCITY = 4.5
 const TURN_SPEED = 0.75
 
